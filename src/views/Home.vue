@@ -132,11 +132,12 @@ export default {
             top: 60px;
             right: 32px;
             ul {
-              width:100px;
+              width: 150px;
               background-color: #161616;
-              padding: 16px;
+              padding: 8px 16px;
               li {
                 display: block;
+                line-height: 48px;
               }
             }
           }
