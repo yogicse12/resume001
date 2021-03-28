@@ -96,6 +96,9 @@ export default {
                 top: 12px;
                 width: 32px;
             }
+            &--item {
+                height: auto;
+            }
         }
         @media only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
             padding: 4em 2em;
