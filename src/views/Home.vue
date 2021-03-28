@@ -4,7 +4,7 @@
       <div class="content">
         <div class="header">
           <div class="name">Arnab Sarkar</div>
-          <div class="links">
+          <div class="links" :class="{'show': active}">
             <ul>
               <li><router-link to="/about">About</router-link></li>
               <li><router-link to="/resume">Resume</router-link></li>
@@ -12,7 +12,7 @@
               <li><router-link to="/contact">Contact</router-link></li>
             </ul>
           </div>
-          <div class="mobile-links"><img src="@/assets/images/menu.svg" alt=""></div>
+          <div class="mobile-links" @click="showmenu"><img src="@/assets/images/menu.svg" alt=""></div>
         </div>
         <div class="main-content">
           <h1 class="title">ARNAB SARKAR</h1>
@@ -43,6 +43,21 @@ export default {
   name: 'Home',
   components: {
     VueTyper,
+  },
+  data() {
+    return {
+      active: false
+    }
+  },
+  watch: {
+      '$route' () {
+          this.active = false;
+      }
+  },
+  methods: {
+    showmenu() {
+      this.active = !this.active;
+    }
   },
 }
 </script>
@@ -111,6 +126,20 @@ export default {
         padding: 1.2em 1.5em;
         .links {
           display: none;
+          &.show {
+            display: block;
+            position: absolute;
+            top: 60px;
+            right: 32px;
+            ul {
+              width:100px;
+              background-color: #161616;
+              padding: 16px;
+              li {
+                display: block;
+              }
+            }
+          }
         }
         .mobile-links {
           display: inline;
